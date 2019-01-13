@@ -1,0 +1,27 @@
+version: '2'
+services:
+  subdogdaemon:
+    image: anthonydenecheau/sub-dog-daemon:sub-dog-daemon-master-20190110143529-16
+    container_name: sub-dogdaemon
+    restart: always    
+    ports:
+      - "8084:8084"
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "8084"
+      SPRING_DATASOURCE_USERNAME: "U_WEBSERVICES"
+      SPRING_DATASOURCE_PASSWORD: "INFPOLMDP155"
+      DATABASESERVER_NAME: "lof"
+      DATABASESERVER_PORT: "1521"
+      #GOOGLE_PROJECT_ID: "lof-ws-test"
+      GOOGLE_APPLICATION_CREDENTIALS: "/tmp/lof-ws-test-5c33f02ea8c8.json" 
+      #ENCRYPT_KEY:         ${ENCRYPT_KEY}
+      _JAVA_OPTIONS:       "-Xms256m -Xmx512m"
+      JAVA_SECURITY_EGD: "file:/dev/./urandom"
+    volumes:
+      # mount directory where file has been deployed on local machine
+      - /home/userscc:/tmp
+    extra_hosts:
+       - "lof:10.3.2.80"
+volumes:
+  tmp:
