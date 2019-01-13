@@ -8,7 +8,7 @@
 		<version>2.1.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.pub.sub</groupId>
+	<groupId>com.scc.sub</groupId>
 	<artifactId>sub-dog-daemon</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sub-dog-daemon</name>
@@ -19,7 +19,7 @@
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Greenwich.RC2</spring-cloud.version>
 		<start-class>com.scc.sub.Application</start-class>
-		<docker.image.name>anthonydenecheau/sub-onlinedogshow-daemon</docker.image.name>
+		<docker.image.name>anthonydenecheau/sub-dog-daemon</docker.image.name>
 		<docker.image.tag>${env.BUILD_NAME}</docker.image.tag>
 	</properties>
 
