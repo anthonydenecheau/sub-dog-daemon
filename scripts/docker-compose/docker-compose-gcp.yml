@@ -9,13 +9,11 @@ services:
     environment:
       PROFILE: "default"
       SERVER_PORT: "8210"
-      SPRING_DATASOURCE_USERNAME: "ws_dev"
-      SPRING_DATASOURCE_PASSWORD: "ws_dev"
-      DATABASESERVER_NAME: "ws_dev"
-      DATABASESERVER_PORT: "5432"
       #GOOGLE_PROJECT_ID: "lof-ws-test"
+      # not specify on gcp
       GOOGLE_APPLICATION_CREDENTIALS: "/tmp/lof-ws-test-5c33f02ea8c8.json" 
-      #ENCRYPT_KEY:         ${ENCRYPT_KEY}
+      # set encrypted key on machine
+      ENCRYPT_KEY:         ${ENCRYPT_KEY}
       _JAVA_OPTIONS:       "-Xms256m -Xmx512m"
       JAVA_SECURITY_EGD: "file:/dev/./urandom"
     volumes:
