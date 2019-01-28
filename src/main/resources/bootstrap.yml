@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: subdogdaemon
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8888
+

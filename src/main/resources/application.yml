@@ -1,0 +1,28 @@
+server:
+  port: 8210
+
+# les topics et leurs subscriptions doivent être crées s/ gcp
+# cf.https://github.com/spring-cloud/spring-cloud-gcp/tree/master/spring-cloud-gcp-samples/spring-cloud-gcp-integration-pubsub-json-sample
+spring:
+  cloud:
+    gcp: 
+      config:
+        enabled: true
+# Config server API timeout in milliseconds, default : 60000 (1 minute)
+        timeout-millis: 120000
+# Provide project id, credentials to override default
+        project-id: lof-ws-test
+        credentials:
+          location: file:${GOOGLE_APPLICATION_CREDENTIALS}
+    stream:
+      bindings:
+        input:
+          destination: dogSubscription
+        output:
+          destination: dogTopic
+
+# Setting the logging levels for the service
+logging:
+  level:
+    org.springframework.web: WARN
+    com.scc.sub: DEBUG    

@@ -1,7 +1,7 @@
 version: '2'
 services:
   subdogdaemon:
-    image: anthonydenecheau/sub-dog-daemon:sub-dog-daemon-master-20190110143529-16
+    image: anthonydenecheau/sub-dog-daemon:${TAG_SUB_DOG_SERVICE}
     container_name: sub-dogdaemon
     restart: always    
     ports:
